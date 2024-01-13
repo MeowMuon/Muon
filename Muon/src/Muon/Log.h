@@ -6,6 +6,8 @@
 
 #include "spdlog/spdlog.h"
 #include "spdlog/sinks/stdout_color_sinks.h"
+#include "spdlog/fmt/ostr.h"
+
 
 namespace Muon
 {
@@ -38,3 +40,6 @@ namespace Muon
 #define MU_LOG_WARN(...) ::Muon::Log::GetClientLogger()->warn(__VA_ARGS__)
 #define MU_LOG_ERROR(...) ::Muon::Log::GetClientLogger()->error(__VA_ARGS__)
 #define MU_LOG_FATAL(...) ::Muon::Log::GetClientLogger()->critical(__VA_ARGS__)
+
+//MU_LOG
+#define MU_LOG(type, ...) MU_##type(__VA_ARGS__)

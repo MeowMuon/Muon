@@ -4,6 +4,9 @@
     <Filter Include="Muon">
       <UniqueIdentifier>{2449897C-1080-8A0D-B96C-7010A582060F}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Muon\Events">
+      <UniqueIdentifier>{88C4D4B2-F479-4DA8-7D6E-477FE92244AC}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Muon.h" />
@@ -16,9 +19,22 @@
     <ClInclude Include="src\Muon\EntryPoint.h">
       <Filter>Muon</Filter>
     </ClInclude>
+    <ClInclude Include="src\Muon\Events\ApplicationEvent.h">
+      <Filter>Muon\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Muon\Events\Event.h">
+      <Filter>Muon\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Muon\Events\KeyEvent.h">
+      <Filter>Muon\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Muon\Events\MouseEvent.h">
+      <Filter>Muon\Events</Filter>
+    </ClInclude>
     <ClInclude Include="src\Muon\Log.h">
       <Filter>Muon</Filter>
     </ClInclude>
+    <ClInclude Include="src\mupch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Muon\Application.cpp">
@@ -27,5 +43,6 @@
     <ClCompile Include="src\Muon\Log.cpp">
       <Filter>Muon</Filter>
     </ClCompile>
+    <ClCompile Include="src\mupch.cpp" />
   </ItemGroup>
 </Project>

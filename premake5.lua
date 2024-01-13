@@ -14,13 +14,17 @@ MACRO_PREFIX = "MU"
 
 ENGINE_INCLUDE_DIRS =
 {
+	"%{ENGINE_NAME}/src",
 	"%{ENGINE_NAME}/vendor/spdlog/include"
 }
 APP_INCLUDE_DIRS =
 {
-	"%{ENGINE_NAME}/vendor/spdlog/include",
-	"%{ENGINE_NAME}/src"
+	"%{ENGINE_NAME}/src",
+	"%{ENGINE_NAME}/vendor/spdlog/include"
 }
+
+ENGINE_PCH = "mupch.h"
+ENGINE_PCH_SRC = "%{ENGINE_NAME}/src/mupch.cpp"
 
 OUT_FOLDER = "_bin"
 OBJ_FOLDER = "_obj"
@@ -36,6 +40,9 @@ project (ENGINE_NAME)
 
 	targetdir "%{OUT_FOLDER}/%{CONFIG_FOLDER}/%{ENGINE_NAME}"
 	objdir "%{OBJ_FOLDER}/%{CONFIG_FOLDER}/%{ENGINE_NAME}"
+
+	pchheader (ENGINE_PCH)
+	pchsource (ENGINE_PCH_SRC)
 
 	files
 	{
@@ -104,6 +111,9 @@ project (APP_NAME)
 		defines
 		{
 			"%{MACRO_PREFIX}_PLATFORM_WINDOWS"
+		}
+		prebuildcommands
+		{
 		}
 		postbuildcommands
 		{

@@ -13,3 +13,5 @@
 #error Platform is not properly defined!
 
 #endif
+
+#define BIT(x) (1 << x)

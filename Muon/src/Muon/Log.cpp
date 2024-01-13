@@ -1,3 +1,4 @@
+#include "mupch.h"
 #include "Log.h"
 
 namespace Muon
