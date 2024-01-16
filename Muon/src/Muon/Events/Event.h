@@ -14,7 +14,7 @@ namespace Muon
 		virtual const char* GetName() const override { return #type; }
 
 	#define EVENT_CLASS_CATEGORY(category) \
-		virtual int GetCategory() const override { return category; }
+		virtual int GetCategory() const override { return (int)category; }
 
 	enum class EventType
 	{
@@ -40,7 +40,7 @@ namespace Muon
 		MAX
 	};
 
-	enum EventCategory
+	enum class EventCategory
 	{
 		None = 0,
 		Application = BIT(0),
@@ -60,7 +60,7 @@ namespace Muon
 		virtual const char* GetName() const = 0;
 		virtual std::string ToString() const { return GetName(); }
 
-		inline bool IsInCategory(EventCategory category) { return GetCategory() & category; }
+		inline bool IsInCategory(EventCategory category) { return GetCategory() & (int)category; }
 
 	protected:
 		bool m_Handled = false;

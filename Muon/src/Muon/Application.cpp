@@ -3,13 +3,13 @@
 
 #include "Muon/Events/Event.h"
 #include "Muon/Events/ApplicationEvent.h"
-#include "Muon/Log.h"
 
 namespace Muon
 {
 
 	Application::Application()
 	{
+		m_Window = std::unique_ptr<Window>(Window::Create());
 	}
 
 	Application::~Application()
@@ -18,10 +18,10 @@ namespace Muon
 
 	void Application::Run()
 	{
-		WindowResizeEvent e(1280, 720);
-		MU_LOG(LOG_WARN, e.ToString());
-
-		while (true);
+		while (m_ShouldRun)
+		{
+			m_Window->OnUpdate();
+		}
 	}
 
 }

@@ -78,11 +78,11 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>MU_PLATFORM_WINDOWS;MU_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\Muon\src;..\Muon\vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>MU_PLATFORM_WINDOWS;MU_DEBUG;MU_ENABLE_ASSERT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\Muon\vendor\spdlog\include;..\Muon\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -91,7 +91,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\_bin\Debug-windows-x86_64\Muon\Muon.dll\ (xcopy /Q /E /Y /I ..\_bin\Debug-windows-x86_64\Muon\Muon.dll ..\_bin\Debug-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\_bin\Debug-windows-x86_64\Muon\Muon.dll ..\_bin\Debug-windows-x86_64\Sandbox &gt; nul)</Command>
+      <Command>IF EXIST $(SolutionDir)\_bin\Debug-windows-x86_64\Muon\Muon.dll\ (xcopy /Q /E /Y /I $(SolutionDir)\_bin\Debug-windows-x86_64\Muon\Muon.dll $(SolutionDir)\_bin\Debug-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I $(SolutionDir)\_bin\Debug-windows-x86_64\Muon\Muon.dll $(SolutionDir)\_bin\Debug-windows-x86_64\Sandbox &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -99,13 +99,13 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>MU_PLATFORM_WINDOWS;MU_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\Muon\src;..\Muon\vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Muon\vendor\spdlog\include;..\Muon\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -115,7 +115,7 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\_bin\Release-windows-x86_64\Muon\Muon.dll\ (xcopy /Q /E /Y /I ..\_bin\Release-windows-x86_64\Muon\Muon.dll ..\_bin\Release-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\_bin\Release-windows-x86_64\Muon\Muon.dll ..\_bin\Release-windows-x86_64\Sandbox &gt; nul)</Command>
+      <Command>IF EXIST $(SolutionDir)\_bin\Release-windows-x86_64\Muon\Muon.dll\ (xcopy /Q /E /Y /I $(SolutionDir)\_bin\Release-windows-x86_64\Muon\Muon.dll $(SolutionDir)\_bin\Release-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I $(SolutionDir)\_bin\Release-windows-x86_64\Muon\Muon.dll $(SolutionDir)\_bin\Release-windows-x86_64\Sandbox &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Distribute|x64'">
@@ -123,13 +123,13 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>MU_PLATFORM_WINDOWS;MU_DISTRIBUTE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\Muon\src;..\Muon\vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Muon\vendor\spdlog\include;..\Muon\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -139,7 +139,7 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\_bin\Distribute-windows-x86_64\Muon\Muon.dll\ (xcopy /Q /E /Y /I ..\_bin\Distribute-windows-x86_64\Muon\Muon.dll ..\_bin\Distribute-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\_bin\Distribute-windows-x86_64\Muon\Muon.dll ..\_bin\Distribute-windows-x86_64\Sandbox &gt; nul)</Command>
+      <Command>IF EXIST $(SolutionDir)\_bin\Distribute-windows-x86_64\Muon\Muon.dll\ (xcopy /Q /E /Y /I $(SolutionDir)\_bin\Distribute-windows-x86_64\Muon\Muon.dll $(SolutionDir)\_bin\Distribute-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I $(SolutionDir)\_bin\Distribute-windows-x86_64\Muon\Muon.dll $(SolutionDir)\_bin\Distribute-windows-x86_64\Sandbox &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
