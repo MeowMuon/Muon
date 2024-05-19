@@ -11,7 +11,7 @@ namespace Muon
 	{
 	public:
 		EVENT_CLASS_TYPE(WindowClose);
-		EVENT_CLASS_CATEGORY(EventCategory::Application);
+		EVENT_CLASS_CATEGORY(EventCategory::EECApplication);
 
 		WindowCloseEvent() {}
 	};
@@ -20,7 +20,7 @@ namespace Muon
 	{
 	public:
 		EVENT_CLASS_TYPE(WindowResize);
-		EVENT_CLASS_CATEGORY(EventCategory::Application);
+		EVENT_CLASS_CATEGORY(EventCategory::EECApplication);
 
 		WindowResizeEvent(float width, float height)
 			:m_Width{ width }, m_Height{ height } {}
@@ -44,7 +44,7 @@ namespace Muon
 	{
 	public:
 		EVENT_CLASS_TYPE(AppTick);
-		EVENT_CLASS_CATEGORY(EventCategory::Application);
+		EVENT_CLASS_CATEGORY(EventCategory::EECApplication);
 
 		AppTickEvent() {}
 	};
@@ -53,7 +53,7 @@ namespace Muon
 	{
 	public:
 		EVENT_CLASS_TYPE(AppUpdate);
-		EVENT_CLASS_CATEGORY(EventCategory::Application);
+		EVENT_CLASS_CATEGORY(EventCategory::EECApplication);
 
 		AppUpdateEvent() {}
 	};
@@ -62,7 +62,7 @@ namespace Muon
 	{
 	public:
 		EVENT_CLASS_TYPE(AppRender);
-		EVENT_CLASS_CATEGORY(EventCategory::Application);
+		EVENT_CLASS_CATEGORY(EventCategory::EECApplication);
 
 		AppRenderEvent() {}
 	};

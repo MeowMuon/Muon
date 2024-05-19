@@ -14,7 +14,7 @@ namespace Muon
 		virtual const char* GetName() const override { return #type; }
 
 	#define EVENT_CLASS_CATEGORY(category) \
-		virtual int GetCategory() const override { return (int)category; }
+		virtual int GetCategory() const override { return category; }
 
 	enum class EventType
 	{
@@ -40,14 +40,14 @@ namespace Muon
 		MAX
 	};
 
-	enum class EventCategory
+	enum EventCategory
 	{
-		None = 0,
-		Application = BIT(0),
-		Input = BIT(1),
-		Keyboard = BIT(2),
-		Mouse = BIT(3),
-		MouseButton = BIT(4),
+		EECNone = 0,
+		EECApplication = BIT(0),
+		EECInput = BIT(1),
+		EECKeyboard = BIT(2),
+		EECMouse = BIT(3),
+		EECMouseButton = BIT(4),
 	};
 
 	class MUON_API Event

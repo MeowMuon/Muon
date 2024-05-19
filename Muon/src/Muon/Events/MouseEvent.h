@@ -11,7 +11,7 @@ namespace Muon
 	{
 	public:
 		EVENT_CLASS_TYPE(MouseMove);
-		EVENT_CLASS_CATEGORY(EventCategory::Input | EventCategory::Mouse);
+		EVENT_CLASS_CATEGORY(EventCategory::EECInput | EventCategory::EECMouse);
 
 		MouseMoveEvent(float x, float y)
 			:m_MouseX{ x }, m_MouseY{ y } {}
@@ -35,7 +35,7 @@ namespace Muon
 	{
 	public:
 		EVENT_CLASS_TYPE(MouseScroll);
-		EVENT_CLASS_CATEGORY(EventCategory::Input | EventCategory::Mouse);
+		EVENT_CLASS_CATEGORY(EventCategory::EECInput | EventCategory::EECMouse);
 
 		MouseScrollEvent(float offsetX, float offsetY)
 			:m_OffsetX{ offsetX }, m_OffsetY{ offsetY } {}
@@ -58,7 +58,7 @@ namespace Muon
 	class MUON_API MouseButtonEvent :public Event
 	{
 	public:
-		EVENT_CLASS_CATEGORY(EventCategory::Input | EventCategory::Mouse | EventCategory::MouseButton);
+		EVENT_CLASS_CATEGORY(EventCategory::EECInput | EventCategory::EECMouse | EventCategory::EECMouseButton);
 
 		inline int GetButton() const { return m_Button; }
 

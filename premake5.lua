@@ -45,7 +45,7 @@ ENGINE_LIBRARY_FILES =
 }
 
 -- ==========	Workspace	==========
-workspace "Muon"
+workspace (ENGINE_NAME)
 	architecture "x64"
 	configurations
 	{

@@ -10,7 +10,7 @@ namespace Muon
 	class MUON_API KeyEvent :public Event
 	{
 	public:
-		EVENT_CLASS_CATEGORY(EventCategory::Input | EventCategory::Keyboard);
+		EVENT_CLASS_CATEGORY(EventCategory::EECInput | EventCategory::EECKeyboard);
 
 		inline int GetKeyCode() const { return m_KeyCode; }
 
