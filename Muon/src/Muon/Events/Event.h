@@ -62,8 +62,7 @@ namespace Muon
 
 		inline bool IsInCategory(EventCategory category) { return GetCategory() & (int)category; }
 
-	protected:
-		bool m_Handled = false;
+		bool Handled = false;
 	};
 
 	class MUON_API EventDispatcher
@@ -80,7 +79,7 @@ namespace Muon
 		{
 			if (m_Event.GetType() == T::GetStaticType())
 			{
-				m_Event.m_Handled = func(*(T*)&m_Event);
+				m_Event.Handled = func(*(T*)&m_Event);
 				return true;
 			}
 			return false;

@@ -6,6 +6,7 @@
 #include "Muon/Log.h"
 
 #include "Muon/Application.h"
+#include "Muon/Layer.h"
 
 //========Entry Point========
 #include "Muon/EntryPoint.h"

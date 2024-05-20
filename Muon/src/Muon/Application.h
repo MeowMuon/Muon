@@ -6,6 +6,8 @@
 #include "Muon/Events/Event.h"
 #include "Muon/Events/ApplicationEvent.h"
 
+#include "Muon/LayerStack.h"
+
 namespace Muon
 {
 
@@ -19,11 +21,15 @@ namespace Muon
 
 		void OnEvent(Event& e);
 
+		void PushLayer(Layer* layer);
+		void PushOverlay(Layer* overlay);
+
 	private:
+		bool OnWindowClose(WindowCloseEvent& e);
+
 		bool m_ShouldRun = true;
 		std::unique_ptr<Window> m_Window;
-
-		bool OnWindowClose(WindowCloseEvent& e);
+		LayerStack m_LayerStack;
 	};
 
 	Application* CreateApplication();

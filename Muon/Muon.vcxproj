@@ -149,6 +149,8 @@
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Muon\Layer.h" />
+    <ClInclude Include="src\Muon\LayerStack.h" />
     <ClInclude Include="src\Muon.h" />
     <ClInclude Include="src\Muon\Application.h" />
     <ClInclude Include="src\Muon\Core.h" />
@@ -163,6 +165,8 @@
     <ClInclude Include="src\mupch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Muon\Layer.cpp" />
+    <ClCompile Include="src\Muon\LayerStack.cpp" />
     <ClCompile Include="src\Muon\Application.cpp" />
     <ClCompile Include="src\Muon\Log.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />

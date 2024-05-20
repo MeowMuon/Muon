@@ -58,6 +58,7 @@ workspace (ENGINE_NAME)
 -- ==========	Projects	==========
 include (ENGINE_NAME .. "/vendor/_premake_/GLFW")
 
+--Engine
 project (ENGINE_NAME)
 	location "%{ENGINE_NAME}"
 	kind "SharedLib"
@@ -122,6 +123,7 @@ project (ENGINE_NAME)
 		optimize "On"
 		runtime "Release"
 
+--Sandbox
 project (APP_NAME)
 	location "%{APP_NAME}"
 	kind "ConsoleApp"

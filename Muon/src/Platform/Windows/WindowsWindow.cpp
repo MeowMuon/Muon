@@ -70,8 +70,9 @@ namespace Muon
 		}
 
 		m_Window = glfwCreateWindow(m_Data.Width, m_Data.Height, m_Data.Title.c_str(), nullptr, nullptr);
-		glfwMakeContextCurrent(m_Window);
 		glfwSetWindowUserPointer(m_Window, &m_Data);
+
+		glfwMakeContextCurrent(m_Window);
 		SetVSync(true);
 
 		//set glfw callbacks
