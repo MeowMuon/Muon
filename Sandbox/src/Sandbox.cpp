@@ -7,7 +7,7 @@ public:
 
 	void OnEvent(Muon::Event& e) override
 	{
-		MU_LOG_TEMP("{0}: {1}", m_DebugName, e.ToString());
+		MU_LOG(LOG_TEMP,"{0}: {1}", m_DebugName, e.ToString());
 	}
 };
 
@@ -17,6 +17,7 @@ public:
 	Sandbox()
 	{
 		PushLayer(new TestLayer("Layer 1"));
+		PushOverlay(new Muon::ImGuiLayer());
 	}
 
 	~Sandbox()

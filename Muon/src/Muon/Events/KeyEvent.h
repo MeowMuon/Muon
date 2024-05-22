@@ -58,4 +58,20 @@ namespace Muon
 		}
 	};
 
+	class MUON_API KeyTypeEvent :public KeyEvent
+	{
+	public:
+		EVENT_CLASS_TYPE(KeyType);
+
+		KeyTypeEvent(int keyCode)
+			:KeyEvent(keyCode) {}
+
+		std::string ToString() const override
+		{
+			std::stringstream ss;
+			ss << "KeyTypeEvent: " << m_KeyCode;
+			return ss.str();
+		}
+	};
+
 }

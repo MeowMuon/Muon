@@ -1,15 +1,20 @@
 #include "mupch.h"
 #include "Application.h"
 
+#include "glad/glad.h"
+
 namespace Muon
 {
 
-#define MU_BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
+	Application* Application::s_Instance = nullptr;
 
 	Application::Application()
 	{
+		MU_ASSERT_CORE(!s_Instance,"Application instance already exists!")
+		s_Instance = this;
+
 		m_Window = std::unique_ptr<Window>(Window::Create());
-		m_Window->SetEventCallback(MU_BIND_EVENT_FN(OnEvent));
+		m_Window->SetEventCallback(MU_BIND_1P(Application::OnEvent, this));
 	}
 
 	Application::~Application()
@@ -20,6 +25,8 @@ namespace Muon
 	{
 		while (m_ShouldRun)
 		{
+			glClearColor(0.2, 0.8, 0.8, 1.0);
+			glClear(GL_COLOR_BUFFER_BIT);
 			for (Layer* layer : m_LayerStack)
 			{
 				layer->OnUpdate();
@@ -30,10 +37,10 @@ namespace Muon
 
 	void Application::OnEvent(Event& e)
 	{
-		MU_LOG_CORE_TEMP("{0}", e.ToString());
+		MU_LOG_CORE(LOG_INFO, "{0}", e.ToString());
 
 		EventDispatcher d(e);
-		d.Dispatch<WindowCloseEvent>(MU_BIND_EVENT_FN(OnWindowClose));
+		d.Dispatch<WindowCloseEvent>(MU_BIND_1P(Application::OnWindowClose, this));
 		if (e.Handled)return;
 
 		for (auto it = m_LayerStack.end();it != m_LayerStack.begin();)
@@ -46,11 +53,13 @@ namespace Muon
 	void Application::PushLayer(Layer* layer)
 	{
 		m_LayerStack.PushLayer(layer);
+		layer->OnAttach();
 	}
 
 	void Application::PushOverlay(Layer* overlay)
 	{
 		m_LayerStack.PushOverlay(overlay);
+		overlay->OnAttach();
 	}
 
 	bool Application::OnWindowClose(WindowCloseEvent& e)

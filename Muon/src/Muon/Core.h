@@ -15,7 +15,7 @@
 #endif
 
 #ifdef MU_ENABLE_ASSERT
-	#define MU_ASSERT_CORE(x, ...) { if (!(x)) { MU_LOG(LOG_CORE_ERROR, "Assertion failed:{0}", __VA_ARGS__);__debugbreak(); } }
+	#define MU_ASSERT_CORE(x, ...) { if (!(x)) { MU_LOG_CORE(LOG_ERROR, "Assertion failed:{0}", __VA_ARGS__);__debugbreak(); } }
 	#define MU_ASSERT(x, ...) { if (!(x)) { MU_LOG(LOG_ERROR, "Assertion failed:{0}", __VA_ARGS__);__debugbreak(); } }
 #else
 	#define MU_ASSERT_CORE(x, ...)
@@ -23,3 +23,9 @@
 #endif
 
 #define BIT(x) (1 << x)
+
+#define MU_BIND_1P(fn, ptr) std::bind(&fn, ptr, std::placeholders::_1)
+#define MU_BIND_2P(fn, ptr) std::bind(&fn, ptr, std::placeholders::_1, std::placeholders::_2)
+#define MU_BIND_3P(fn, ptr) std::bind(&fn, ptr, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3)
+#define MU_BIND_4P(fn, ptr) std::bind(&fn, ptr, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4)
+#define MU_BIND_5P(fn, ptr) std::bind(&fn, ptr, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5)

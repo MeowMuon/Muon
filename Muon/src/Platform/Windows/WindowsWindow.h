@@ -18,6 +18,7 @@ namespace Muon
 		inline unsigned int GetHeight() const override { return m_Data.Height; };
 
 		inline void SetEventCallback(const EventCallbackFn& callback) override { m_Data.Callback = callback; }
+
 		void SetVSync(bool enabled) override;
 		bool IsVSync() const override { return m_Data.VSync; }
 

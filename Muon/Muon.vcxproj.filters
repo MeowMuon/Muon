@@ -37,6 +37,12 @@
     <ClInclude Include="src\Muon\Events\MouseEvent.h">
       <Filter>Muon\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Muon\Layer.h">
+      <Filter>Muon</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Muon\LayerStack.h">
+      <Filter>Muon</Filter>
+    </ClInclude>
     <ClInclude Include="src\Muon\Log.h">
       <Filter>Muon</Filter>
     </ClInclude>
@@ -47,15 +53,19 @@
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\mupch.h" />
-    <ClInclude Include="src\Muon\Layer.h">
-      <Filter>Muon</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Muon\LayerStack.h">
-      <Filter>Muon</Filter>
-    </ClInclude>
+    <ClInclude Include="src\Muon\GUI\ImGuiLayer.h" />
+    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
+    <ClInclude Include="libs\ImGui\backends\imgui_impl_opengl3_loader.h" />
+    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLLoader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Muon\Application.cpp">
+      <Filter>Muon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Muon\Layer.cpp">
+      <Filter>Muon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Muon\LayerStack.cpp">
       <Filter>Muon</Filter>
     </ClCompile>
     <ClCompile Include="src\Muon\Log.cpp">
@@ -65,11 +75,7 @@
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\mupch.cpp" />
-    <ClCompile Include="src\Muon\Layer.cpp">
-      <Filter>Muon</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Muon\LayerStack.cpp">
-      <Filter>Muon</Filter>
-    </ClCompile>
+    <ClCompile Include="src\Muon\GUI\ImGuiLayer.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
   </ItemGroup>
 </Project>

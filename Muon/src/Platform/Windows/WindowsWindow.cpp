@@ -5,6 +5,8 @@
 #include "Muon/Events/KeyEvent.h"
 #include "Muon/Events/MouseEvent.h"
 
+#include "glad/glad.h"
+
 namespace Muon
 {
 
@@ -13,7 +15,7 @@ namespace Muon
 
 	static void GLFWErrorCallback(int error_code, const char* description)
 	{
-		MU_LOG_CORE_ERROR("GLFW ERROR ({0}): {1}", error_code, description);
+		MU_LOG_CORE(LOG_ERROR, "GLFW ERROR ({0}): {1}", error_code, description);
 	}
 
 	//member
@@ -53,7 +55,7 @@ namespace Muon
 
 	void WindowsWindow::Init(const WindowProps& props)
 	{
-		MU_LOG(LOG_TEMP, "Creating window \"{0}\" ({1}x{2})", props.Title, props.Width, props.Height);
+		MU_LOG_CORE(LOG_INFO, "Creating window \"{0}\" ({1}x{2})", props.Title, props.Width, props.Height);
 
 		m_Data.Title = props.Title;
 		m_Data.Width = props.Width;
@@ -70,10 +72,12 @@ namespace Muon
 		}
 
 		m_Window = glfwCreateWindow(m_Data.Width, m_Data.Height, m_Data.Title.c_str(), nullptr, nullptr);
-		glfwSetWindowUserPointer(m_Window, &m_Data);
-
 		glfwMakeContextCurrent(m_Window);
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		MU_ASSERT_CORE(status, "Failed to initialize Glad!");
 		SetVSync(true);
+
+		glfwSetWindowUserPointer(m_Window, &m_Data);
 
 		//set glfw callbacks
 		glfwSetWindowCloseCallback(m_Window, [](GLFWwindow* window)
@@ -85,7 +89,7 @@ namespace Muon
 		glfwSetWindowSizeCallback(m_Window, [](GLFWwindow* window, int width, int height)
 			{
 				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
-				WindowResizeEvent e(width, height);
+				WindowResizeEvent e((float)width, (float)height);
 				data.Width = width;
 				data.Height = height;
 				data.Callback(e);
@@ -114,6 +118,12 @@ namespace Muon
 					break;
 				}
 				}
+			});
+		glfwSetCharCallback(m_Window, [](GLFWwindow* window, unsigned int codepoint)
+			{
+				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+				KeyTypeEvent e(codepoint);
+				data.Callback(e);
 			});
 		glfwSetMouseButtonCallback(m_Window, [](GLFWwindow* window, int button, int action, int mods)
 			{

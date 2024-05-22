@@ -7,6 +7,7 @@
 
 #include "Muon/Application.h"
 #include "Muon/Layer.h"
+#include "Muon/GUI/ImGuiLayer.h"
 
 //========Entry Point========
 #include "Muon/EntryPoint.h"

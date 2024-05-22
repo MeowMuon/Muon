@@ -31,6 +31,7 @@ namespace Muon
 
 		KeyPress,
 		KeyRelease,
+		KeyType,
 
 		MousePress,
 		MouseRelease,

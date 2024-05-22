@@ -3,13 +3,13 @@
 #include "Core.h"
 
 #include <memory>
+#include <string>
 
 #include "spdlog/spdlog.h"
 #include "spdlog/sinks/stdout_color_sinks.h"
 
 namespace Muon
 {
-
 	class MUON_API Log
 	{
 	public:
@@ -26,11 +26,11 @@ namespace Muon
 }
 
 //Core logging macros
-#define MU_LOG_CORE_TEMP(...) Muon::Log::GetCoreLogger()->trace(__VA_ARGS__)
-#define MU_LOG_CORE_INFO(...) Muon::Log::GetCoreLogger()->info(__VA_ARGS__)
-#define MU_LOG_CORE_WARN(...) Muon::Log::GetCoreLogger()->warn(__VA_ARGS__)
-#define MU_LOG_CORE_ERROR(...) Muon::Log::GetCoreLogger()->error(__VA_ARGS__)
-#define MU_LOG_CORE_FATAL(...) Muon::Log::GetCoreLogger()->critical(__VA_ARGS__)
+#define MU_CORE_LOG_TEMP(...) Muon::Log::GetCoreLogger()->trace(__VA_ARGS__)
+#define MU_CORE_LOG_INFO(...) Muon::Log::GetCoreLogger()->info(__VA_ARGS__)
+#define MU_CORE_LOG_WARN(...) Muon::Log::GetCoreLogger()->warn(__VA_ARGS__)
+#define MU_CORE_LOG_ERROR(...) Muon::Log::GetCoreLogger()->error(__VA_ARGS__)
+#define MU_CORE_LOG_FATAL(...) Muon::Log::GetCoreLogger()->critical(__VA_ARGS__)
 
 //Client logging macros
 #define MU_LOG_TEMP(...) Muon::Log::GetClientLogger()->trace(__VA_ARGS__)
@@ -40,4 +40,5 @@ namespace Muon
 #define MU_LOG_FATAL(...) Muon::Log::GetClientLogger()->critical(__VA_ARGS__)
 
 //MU_LOG
-#define MU_LOG(type, ...) MU_##type(__VA_ARGS__)
+#define MU_LOG_CORE(TYPE, ...) MU_CORE_##TYPE(__VA_ARGS__)
+#define MU_LOG(TYPE, ...) MU_##TYPE(__VA_ARGS__)

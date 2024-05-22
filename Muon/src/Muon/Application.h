@@ -16,6 +16,7 @@ namespace Muon
 	public:
 		Application();
 		virtual ~Application();
+		inline static Application& Get() { return *s_Instance; }
 
 		void Run();
 
@@ -24,7 +25,11 @@ namespace Muon
 		void PushLayer(Layer* layer);
 		void PushOverlay(Layer* overlay);
 
+		inline Window& GetWindow() { return *m_Window; }
+
 	private:
+		static Application* s_Instance;
+
 		bool OnWindowClose(WindowCloseEvent& e);
 
 		bool m_ShouldRun = true;
