@@ -153,8 +153,6 @@
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="libs\ImGui\backends\imgui_impl_opengl3_loader.h" />
-    <ClInclude Include="src\Muon\GUI\ImGuiLayer.h" />
     <ClInclude Include="src\Muon.h" />
     <ClInclude Include="src\Muon\Application.h" />
     <ClInclude Include="src\Muon\Core.h" />
@@ -163,6 +161,7 @@
     <ClInclude Include="src\Muon\Events\Event.h" />
     <ClInclude Include="src\Muon\Events\KeyEvent.h" />
     <ClInclude Include="src\Muon\Events\MouseEvent.h" />
+    <ClInclude Include="src\Muon\GUI\ImGuiLayer.h" />
     <ClInclude Include="src\Muon\Layer.h" />
     <ClInclude Include="src\Muon\LayerStack.h" />
     <ClInclude Include="src\Muon\Log.h" />
@@ -173,8 +172,8 @@
     <ClInclude Include="src\mupch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Muon\GUI\ImGuiLayer.cpp" />
     <ClCompile Include="src\Muon\Application.cpp" />
+    <ClCompile Include="src\Muon\GUI\ImGuiLayer.cpp" />
     <ClCompile Include="src\Muon\Layer.cpp" />
     <ClCompile Include="src\Muon\LayerStack.cpp" />
     <ClCompile Include="src\Muon\Log.cpp" />
