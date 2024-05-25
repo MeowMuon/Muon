@@ -17,5 +17,5 @@ namespace Muon
 		s_ClientLogger = spdlog::stdout_color_mt("USER");
 		s_ClientLogger->set_level(spdlog::level::trace);
 	}
-	
+
 }

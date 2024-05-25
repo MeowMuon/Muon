@@ -4,20 +4,23 @@
     <Filter Include="Muon">
       <UniqueIdentifier>{2449897C-1080-8A0D-B96C-7010A582060F}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Muon\Core">
+      <UniqueIdentifier>{FCC3315A-682E-E6D0-B16C-97761D16C425}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Muon\Events">
       <UniqueIdentifier>{88C4D4B2-F479-4DA8-7D6E-477FE92244AC}</UniqueIdentifier>
     </Filter>
     <Filter Include="Muon\GUI">
       <UniqueIdentifier>{383AACC4-2407-07D0-4D20-F577394C3C5E}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Platform">
-      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    <Filter Include="Muon\Platform">
+      <UniqueIdentifier>{F80D36D7-64CE-B10D-2D09-FB8A9988F6E9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Platform\OpenGL">
-      <UniqueIdentifier>{1E7D2C1D-8A08-9AE1-9319-1DD6FF23F6E1}</UniqueIdentifier>
+    <Filter Include="Muon\Platform\OpenGL">
+      <UniqueIdentifier>{2C5068F8-18DF-F1C1-C1FD-05BDAD6B0268}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Platform\Windows">
-      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
+    <Filter Include="Muon\Platform\Windows">
+      <UniqueIdentifier>{32308E5D-9E9C-4958-6790-E1B5D3BB6BC0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -25,8 +28,11 @@
     <ClInclude Include="src\Muon\Application.h">
       <Filter>Muon</Filter>
     </ClInclude>
-    <ClInclude Include="src\Muon\Core.h">
-      <Filter>Muon</Filter>
+    <ClInclude Include="src\Muon\Core\Core.h">
+      <Filter>Muon\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Muon\Core\Log.h">
+      <Filter>Muon\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Muon\EntryPoint.h">
       <Filter>Muon</Filter>
@@ -46,32 +52,44 @@
     <ClInclude Include="src\Muon\GUI\ImGuiLayer.h">
       <Filter>Muon\GUI</Filter>
     </ClInclude>
+    <ClInclude Include="src\Muon\Input.h">
+      <Filter>Muon</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Muon\KeyCodes.h">
+      <Filter>Muon</Filter>
+    </ClInclude>
     <ClInclude Include="src\Muon\Layer.h">
       <Filter>Muon</Filter>
     </ClInclude>
     <ClInclude Include="src\Muon\LayerStack.h">
       <Filter>Muon</Filter>
     </ClInclude>
-    <ClInclude Include="src\Muon\Log.h">
+    <ClInclude Include="src\Muon\MouseCodes.h">
       <Filter>Muon</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Muon\Platform\OpenGL\ImGuiOpenGLLoader.h">
+      <Filter>Muon\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Muon\Platform\OpenGL\ImGuiOpenGLRenderer.h">
+      <Filter>Muon\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Muon\Platform\Windows\WindowsInput.h">
+      <Filter>Muon\Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Muon\Platform\Windows\WindowsWindow.h">
+      <Filter>Muon\Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\Muon\Window.h">
       <Filter>Muon</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLLoader.h">
-      <Filter>Platform\OpenGL</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h">
-      <Filter>Platform\OpenGL</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
-      <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\mupch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Muon\Application.cpp">
       <Filter>Muon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Muon\Core\Log.cpp">
+      <Filter>Muon\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\Muon\GUI\ImGuiLayer.cpp">
       <Filter>Muon\GUI</Filter>
@@ -82,14 +100,14 @@
     <ClCompile Include="src\Muon\LayerStack.cpp">
       <Filter>Muon</Filter>
     </ClCompile>
-    <ClCompile Include="src\Muon\Log.cpp">
-      <Filter>Muon</Filter>
+    <ClCompile Include="src\Muon\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
+      <Filter>Muon\Platform\OpenGL</Filter>
     </ClCompile>
-    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
-      <Filter>Platform\OpenGL</Filter>
+    <ClCompile Include="src\Muon\Platform\Windows\WindowsInput.cpp">
+      <Filter>Muon\Platform\Windows</Filter>
     </ClCompile>
-    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
-      <Filter>Platform\Windows</Filter>
+    <ClCompile Include="src\Muon\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Muon\Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\mupch.cpp" />
   </ItemGroup>

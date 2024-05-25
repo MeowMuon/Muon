@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Muon/Core.h"
-#include "Layer.h"
+#include "Muon/Core/Core.h"
+#include "Muon/Layer.h"
 
 #include <vector>
 

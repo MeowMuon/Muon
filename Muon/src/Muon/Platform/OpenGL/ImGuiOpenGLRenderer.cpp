@@ -116,7 +116,6 @@
 #include "imgui.h"
 #ifndef IMGUI_DISABLE
 #include "ImGuiOpenGLRenderer.h"
-#include "glad/glad.h"
 #include <stdio.h>
 #include <stdint.h>     // intptr_t
 #if defined(__APPLE__)

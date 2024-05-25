@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Muon/Core.h"
+#include "Muon/Core/Core.h"
 #include "Muon/Events/Event.h"
 
 namespace Muon

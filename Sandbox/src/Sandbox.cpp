@@ -7,7 +7,10 @@ public:
 
 	void OnEvent(Muon::Event& e) override
 	{
-		MU_LOG(LOG_TEMP,"{0}: {1}", m_DebugName, e.ToString());
+	}
+
+	void OnUpdate() override
+	{
 	}
 };
 

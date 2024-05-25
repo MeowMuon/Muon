@@ -23,6 +23,9 @@ namespace Muon
 		static std::shared_ptr<spdlog::logger> s_ClientLogger;
 	};
 
+	template<typename T>
+	inline auto format_as(const T& obj) { return obj.ToString(); }
+
 }
 
 //Core logging macros

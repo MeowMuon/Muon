@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Core.h"
-#include "Window.h"
+#include "Muon/Core/Core.h"
+#include "Muon/Window.h"
 
 #include "Muon/Events/Event.h"
 #include "Muon/Events/ApplicationEvent.h"

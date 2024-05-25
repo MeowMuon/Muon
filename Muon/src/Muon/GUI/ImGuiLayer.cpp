@@ -1,8 +1,8 @@
 #include "mupch.h"
 #include "ImGuiLayer.h"
 
+#include "Muon/Platform/OpenGL/ImGuiOpenGLRenderer.h"
 #include "imgui.h"
-#include "Platform/OpenGL/ImGuiOpenGLRenderer.h"
 #include "GLFW/glfw3.h"
 
 #include "Muon/Application.h"
@@ -28,7 +28,7 @@ namespace Muon
 		io.BackendFlags |= ImGuiBackendFlags_HasMouseCursors;
 		io.BackendFlags |= ImGuiBackendFlags_HasSetMousePos;
 
-		io.DisplaySize = ImVec2(Application::Get().GetWindow().GetWidth(), Application::Get().GetWindow().GetHeight());
+		io.DisplaySize = ImVec2((float)Application::Get().GetWindow().GetWidth(), (float)Application::Get().GetWindow().GetHeight());
 
 		ImGui_ImplOpenGL3_Init("#version 410");
 	}
@@ -57,7 +57,6 @@ namespace Muon
 
 	void ImGuiLayer::OnEvent(Event& e)
 	{
-		MU_LOG_CORE(LOG_TEMP, "{0}: {1}", m_DebugName, e.ToString());
 		EventDispatcher d(e);
 		d.Dispatch<WindowResizeEvent>(MU_BIND_1P(ImGuiLayer::OnWindowResize, this));
 		d.Dispatch<MouseMoveEvent>(MU_BIND_1P(ImGuiLayer::OnMouseMove, this));
@@ -135,7 +134,7 @@ namespace Muon
 	bool ImGuiLayer::OnWindowResize(WindowResizeEvent& e)
 	{
 		ImGuiIO& io = ImGui::GetIO();
-		io.DisplaySize = ImVec2(Application::Get().GetWindow().GetWidth(), Application::Get().GetWindow().GetHeight());
+		io.DisplaySize = ImVec2((float)Application::Get().GetWindow().GetWidth(), (float)Application::Get().GetWindow().GetHeight());
 		return false;
 	}
 

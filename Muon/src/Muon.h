@@ -2,10 +2,14 @@
 
 //To be included by applications outside
 
-#include "Muon/Core.h"
-#include "Muon/Log.h"
+#include "Muon/Core/Core.h"
+#include "Muon/Core/Log.h"
 
 #include "Muon/Application.h"
+#include "Muon/Input.h"
+#include "Muon/KeyCodes.h"
+#include "Muon/MouseCodes.h"
+
 #include "Muon/Layer.h"
 #include "Muon/GUI/ImGuiLayer.h"
 

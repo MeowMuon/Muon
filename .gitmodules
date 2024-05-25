@@ -7,3 +7,6 @@
 [submodule "Muon/libs/ImGui"]
 	path = Muon/libs/ImGui
 	url = https://github.com/ocornut/imgui.git
+[submodule "Muon/libs/glm"]
+	path = Muon/libs/glm
+	url = https://github.com/g-truc/glm.git

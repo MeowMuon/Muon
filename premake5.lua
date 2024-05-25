@@ -19,6 +19,7 @@ INCLUDE_DIRS["spdlog"] = "%{wks.location}/%{ENGINE_NAME}/libs/spdlog/include"
 INCLUDE_DIRS["GLFW"] = "%{wks.location}/%{ENGINE_NAME}/libs/GLFW/include"
 INCLUDE_DIRS["Glad"] = "%{wks.location}/%{ENGINE_NAME}/libs/Glad/include"
 INCLUDE_DIRS["ImGui"] = "%{wks.location}/%{ENGINE_NAME}/libs/ImGui"
+INCLUDE_DIRS["glm"] = "%{wks.location}/%{ENGINE_NAME}/libs/glm"
 
 ENGINE_INCLUDE_DIRS =
 {
@@ -26,12 +27,14 @@ ENGINE_INCLUDE_DIRS =
 	INCLUDE_DIRS["spdlog"],
 	INCLUDE_DIRS["GLFW"],
 	INCLUDE_DIRS["Glad"],
-	INCLUDE_DIRS["ImGui"]
+	INCLUDE_DIRS["ImGui"],
+	INCLUDE_DIRS["glm"]
 }
 APP_INCLUDE_DIRS =
 {
 	INCLUDE_DIRS["MuonSrc"],
-	INCLUDE_DIRS["spdlog"]
+	INCLUDE_DIRS["spdlog"],
+	INCLUDE_DIRS["glm"]
 }
 
 -- Library directories

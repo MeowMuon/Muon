@@ -1,6 +1,8 @@
 #include "mupch.h"
 #include "Application.h"
 
+#include "Muon/Input.h"
+
 #include "glad/glad.h"
 
 namespace Muon
@@ -25,19 +27,21 @@ namespace Muon
 	{
 		while (m_ShouldRun)
 		{
-			glClearColor(0.2, 0.8, 0.8, 1.0);
+			glClearColor(0.3, 0.9, 0.9, 1.0);
 			glClear(GL_COLOR_BUFFER_BIT);
+
 			for (Layer* layer : m_LayerStack)
 			{
 				layer->OnUpdate();
 			}
+
 			m_Window->OnUpdate();
 		}
 	}
 
 	void Application::OnEvent(Event& e)
 	{
-		MU_LOG_CORE(LOG_INFO, "{0}", e.ToString());
+		MU_LOG_CORE(LOG_INFO, "{0}", e);
 
 		EventDispatcher d(e);
 		d.Dispatch<WindowCloseEvent>(MU_BIND_1P(Application::OnWindowClose, this));

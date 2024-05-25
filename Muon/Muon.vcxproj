@@ -80,7 +80,7 @@
       <PrecompiledHeaderFile>mupch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>MU_PLATFORM_WINDOWS;MU_BUILD_DLL;GLFW_INCLUDE_NONE;MU_DEBUG;MU_ENABLE_ASSERT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;libs\spdlog\include;libs\GLFW\include;libs\Glad\include;libs\ImGui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;libs\spdlog\include;libs\GLFW\include;libs\Glad\include;libs\ImGui;libs\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -102,7 +102,7 @@
       <PrecompiledHeaderFile>mupch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>MU_PLATFORM_WINDOWS;MU_BUILD_DLL;GLFW_INCLUDE_NONE;MU_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;libs\spdlog\include;libs\GLFW\include;libs\Glad\include;libs\ImGui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;libs\spdlog\include;libs\GLFW\include;libs\Glad\include;libs\ImGui;libs\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -130,7 +130,7 @@
       <PrecompiledHeaderFile>mupch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>MU_PLATFORM_WINDOWS;MU_BUILD_DLL;GLFW_INCLUDE_NONE;MU_DISTRIBUTE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;libs\spdlog\include;libs\GLFW\include;libs\Glad\include;libs\ImGui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;libs\spdlog\include;libs\GLFW\include;libs\Glad\include;libs\ImGui;libs\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>None</DebugInformationFormat>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -155,30 +155,35 @@
   <ItemGroup>
     <ClInclude Include="src\Muon.h" />
     <ClInclude Include="src\Muon\Application.h" />
-    <ClInclude Include="src\Muon\Core.h" />
+    <ClInclude Include="src\Muon\Core\Core.h" />
+    <ClInclude Include="src\Muon\Core\Log.h" />
     <ClInclude Include="src\Muon\EntryPoint.h" />
     <ClInclude Include="src\Muon\Events\ApplicationEvent.h" />
     <ClInclude Include="src\Muon\Events\Event.h" />
     <ClInclude Include="src\Muon\Events\KeyEvent.h" />
     <ClInclude Include="src\Muon\Events\MouseEvent.h" />
     <ClInclude Include="src\Muon\GUI\ImGuiLayer.h" />
+    <ClInclude Include="src\Muon\Input.h" />
+    <ClInclude Include="src\Muon\KeyCodes.h" />
     <ClInclude Include="src\Muon\Layer.h" />
     <ClInclude Include="src\Muon\LayerStack.h" />
-    <ClInclude Include="src\Muon\Log.h" />
+    <ClInclude Include="src\Muon\MouseCodes.h" />
+    <ClInclude Include="src\Muon\Platform\OpenGL\ImGuiOpenGLLoader.h" />
+    <ClInclude Include="src\Muon\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
+    <ClInclude Include="src\Muon\Platform\Windows\WindowsInput.h" />
+    <ClInclude Include="src\Muon\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\Muon\Window.h" />
-    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLLoader.h" />
-    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
-    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\mupch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Muon\Application.cpp" />
+    <ClCompile Include="src\Muon\Core\Log.cpp" />
     <ClCompile Include="src\Muon\GUI\ImGuiLayer.cpp" />
     <ClCompile Include="src\Muon\Layer.cpp" />
     <ClCompile Include="src\Muon\LayerStack.cpp" />
-    <ClCompile Include="src\Muon\Log.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
-    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
+    <ClCompile Include="src\Muon\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
+    <ClCompile Include="src\Muon\Platform\Windows\WindowsInput.cpp" />
+    <ClCompile Include="src\Muon\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\mupch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
