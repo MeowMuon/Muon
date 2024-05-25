@@ -8,6 +8,8 @@
 
 #include "Muon/LayerStack.h"
 
+#include "Muon/GUI/ImGuiLayer.h"
+
 namespace Muon
 {
 
@@ -35,6 +37,7 @@ namespace Muon
 		bool m_ShouldRun = true;
 		std::unique_ptr<Window> m_Window;
 		LayerStack m_LayerStack;
+		ImGuiLayer* m_GuiLayer;
 	};
 
 	Application* CreateApplication();

@@ -16,9 +16,6 @@
     <Filter Include="Muon\Platform">
       <UniqueIdentifier>{F80D36D7-64CE-B10D-2D09-FB8A9988F6E9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Muon\Platform\OpenGL">
-      <UniqueIdentifier>{2C5068F8-18DF-F1C1-C1FD-05BDAD6B0268}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Muon\Platform\Windows">
       <UniqueIdentifier>{32308E5D-9E9C-4958-6790-E1B5D3BB6BC0}</UniqueIdentifier>
     </Filter>
@@ -67,12 +64,6 @@
     <ClInclude Include="src\Muon\MouseCodes.h">
       <Filter>Muon</Filter>
     </ClInclude>
-    <ClInclude Include="src\Muon\Platform\OpenGL\ImGuiOpenGLLoader.h">
-      <Filter>Muon\Platform\OpenGL</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Muon\Platform\OpenGL\ImGuiOpenGLRenderer.h">
-      <Filter>Muon\Platform\OpenGL</Filter>
-    </ClInclude>
     <ClInclude Include="src\Muon\Platform\Windows\WindowsInput.h">
       <Filter>Muon\Platform\Windows</Filter>
     </ClInclude>
@@ -91,6 +82,9 @@
     <ClCompile Include="src\Muon\Core\Log.cpp">
       <Filter>Muon\Core</Filter>
     </ClCompile>
+    <ClCompile Include="src\Muon\GUI\ImGuiBuild.cpp">
+      <Filter>Muon\GUI</Filter>
+    </ClCompile>
     <ClCompile Include="src\Muon\GUI\ImGuiLayer.cpp">
       <Filter>Muon\GUI</Filter>
     </ClCompile>
@@ -99,9 +93,6 @@
     </ClCompile>
     <ClCompile Include="src\Muon\LayerStack.cpp">
       <Filter>Muon</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Muon\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
-      <Filter>Muon\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Muon\Platform\Windows\WindowsInput.cpp">
       <Filter>Muon\Platform\Windows</Filter>

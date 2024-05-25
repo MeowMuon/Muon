@@ -24,7 +24,7 @@ namespace Muon
 	};
 
 	template<typename T>
-	inline auto format_as(const T& obj) { return obj.ToString(); }
+	inline auto format_as(const T& obj) { return format(obj); }
 
 }
 

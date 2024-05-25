@@ -12,25 +12,16 @@ namespace Muon
 	class MUON_API ImGuiLayer :public Layer
 	{
 	public:
-		ImGuiLayer();
+		ImGuiLayer(const std::string& name = "GUI");
 		~ImGuiLayer();
 
-		void OnAttach() override;
-		void OnDetach() override;
-		void OnUpdate() override;
-		void OnEvent(Event& e) override;
+		virtual void OnAttach() override;
+		virtual void OnDetach() override;
 
-	private:
-		bool OnMouseMove(MouseMoveEvent& e);
-		bool OnMouseScroll(MouseScrollEvent& e);
-		bool OnMouseButtonPress(MousePressEvent& e);
-		bool OnMouseButtonRelease(MouseReleaseEvent& e);
-		bool OnKeyType(KeyTypeEvent& e);
-		bool OnKeyPress(KeyPressEvent& e);
-		bool OnKeyRelease(KeyReleaseEvent& e);
-		bool OnWindowResize(WindowResizeEvent& e);
+		virtual void Tick() override;
 
-		float m_Time = 0.f;
+		static void Begin();
+		static void End();
 	};
 
 }

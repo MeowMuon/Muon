@@ -90,4 +90,6 @@ namespace Muon
 		Event& m_Event;
 	};
 
+	MU_FORMAT(Event, e, e.ToString());
+
 }

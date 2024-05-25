@@ -24,8 +24,15 @@
 
 #define BIT(x) (1 << x)
 
-#define MU_BIND_1P(fn, ptr) std::bind(&fn, ptr, std::placeholders::_1)
-#define MU_BIND_2P(fn, ptr) std::bind(&fn, ptr, std::placeholders::_1, std::placeholders::_2)
-#define MU_BIND_3P(fn, ptr) std::bind(&fn, ptr, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3)
-#define MU_BIND_4P(fn, ptr) std::bind(&fn, ptr, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4)
-#define MU_BIND_5P(fn, ptr) std::bind(&fn, ptr, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5)
+#define MU_FORMAT(type, name, fmt) inline auto format(const type& name) { return fmt; }
+
+#define MU_P(n) std::placeholders::_##n
+#define MU_BIND_1P(fn, ptr) std::bind(&fn, ptr, MU_P(1))
+#define MU_BIND_2P(fn, ptr) std::bind(&fn, ptr, MU_P(1), MU_P(2))
+#define MU_BIND_3P(fn, ptr) std::bind(&fn, ptr, MU_P(1), MU_P(2), MU_P(3))
+#define MU_BIND_4P(fn, ptr) std::bind(&fn, ptr, MU_P(1), MU_P(2), MU_P(3), MU_P(4))
+#define MU_BIND_5P(fn, ptr) std::bind(&fn, ptr, MU_P(1), MU_P(2), MU_P(3), MU_P(4), MU_P(5))
+#define MU_BIND_6P(fn, ptr) std::bind(&fn, ptr, MU_P(1), MU_P(2), MU_P(3), MU_P(4), MU_P(5), MU_P(6))
+#define MU_BIND_7P(fn, ptr) std::bind(&fn, ptr, MU_P(1), MU_P(2), MU_P(3), MU_P(4), MU_P(5), MU_P(6), MU_P(7))
+#define MU_BIND_8P(fn, ptr) std::bind(&fn, ptr, MU_P(1), MU_P(2), MU_P(3), MU_P(4), MU_P(5), MU_P(6), MU_P(7), MU_P(8))
+#define MU_BIND_9P(fn, ptr) std::bind(&fn, ptr, MU_P(1), MU_P(2), MU_P(3), MU_P(4), MU_P(5), MU_P(6), MU_P(7), MU_P(8), MU_P(9))

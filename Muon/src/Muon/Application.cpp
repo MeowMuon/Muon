@@ -17,6 +17,9 @@ namespace Muon
 
 		m_Window = std::unique_ptr<Window>(Window::Create());
 		m_Window->SetEventCallback(MU_BIND_1P(Application::OnEvent, this));
+
+		m_GuiLayer = new ImGuiLayer();
+		PushOverlay(m_GuiLayer);
 	}
 
 	Application::~Application()
@@ -30,10 +33,19 @@ namespace Muon
 			glClearColor(0.3, 0.9, 0.9, 1.0);
 			glClear(GL_COLOR_BUFFER_BIT);
 
+			//PreTick=======================
+			ImGuiLayer::Begin();
+
+			//Tick==========================
 			for (Layer* layer : m_LayerStack)
 			{
-				layer->OnUpdate();
+				layer->Tick();
 			}
+
+			//PostTick======================
+			ImGuiLayer::End();
+
+			//End===========================
 
 			m_Window->OnUpdate();
 		}

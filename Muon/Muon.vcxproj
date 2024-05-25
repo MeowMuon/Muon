@@ -168,8 +168,6 @@
     <ClInclude Include="src\Muon\Layer.h" />
     <ClInclude Include="src\Muon\LayerStack.h" />
     <ClInclude Include="src\Muon\MouseCodes.h" />
-    <ClInclude Include="src\Muon\Platform\OpenGL\ImGuiOpenGLLoader.h" />
-    <ClInclude Include="src\Muon\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="src\Muon\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Muon\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\Muon\Window.h" />
@@ -178,10 +176,10 @@
   <ItemGroup>
     <ClCompile Include="src\Muon\Application.cpp" />
     <ClCompile Include="src\Muon\Core\Log.cpp" />
+    <ClCompile Include="src\Muon\GUI\ImGuiBuild.cpp" />
     <ClCompile Include="src\Muon\GUI\ImGuiLayer.cpp" />
     <ClCompile Include="src\Muon\Layer.cpp" />
     <ClCompile Include="src\Muon\LayerStack.cpp" />
-    <ClCompile Include="src\Muon\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
     <ClCompile Include="src\Muon\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Muon\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\mupch.cpp">

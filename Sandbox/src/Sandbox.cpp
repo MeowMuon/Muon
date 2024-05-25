@@ -9,7 +9,7 @@ public:
 	{
 	}
 
-	void OnUpdate() override
+	void Tick() override
 	{
 	}
 };
@@ -20,7 +20,6 @@ public:
 	Sandbox()
 	{
 		PushLayer(new TestLayer("Layer 1"));
-		PushOverlay(new Muon::ImGuiLayer());
 	}
 
 	~Sandbox()
